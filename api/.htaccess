@@ -1,0 +1,11 @@
+# url rewrite script
+
+RewriteEngine On
+
+#following three lines applies rules for folder files and symbolic links
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#all the requests are redirected to the index.php which is enabled by following line
+RewriteRule . index.php [L]
